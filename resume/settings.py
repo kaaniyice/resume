@@ -30,9 +30,9 @@ SECRET_KEY = env('SECRET_KEY')
 
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = env('ALLOWED_HOSTS',cast=list)
+ALLOWED_HOSTS = env('ALLOWED_HOSTS', cast=list)
 
-CSFR_TRUSTED_ORIGINS = env('CSFR_TRUSTED_ORIGINS',cast=list)
+CSFR_TRUSTED_ORIGINS = env('CSFR_TRUSTED_ORIGINS', cast=list)
 
 
 # Application definition
@@ -62,7 +62,8 @@ ROOT_URLCONF = 'resume.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates']
+        ,
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
