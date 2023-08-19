@@ -1,15 +1,15 @@
 {% extends 'layout.html' %}
-
+{% load static %}
 {% block content %}
     <div class="row">
-        <h1>Resume App</h1>
+        <h1 class="myHeader">Resume App</h1>
     </div>
     <p>
         <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aspernatur ea expedita explicabo fugit ipsum laudantium, molestias mollitia nemo nisi odio, possimus provident quam quidem unde vel voluptate voluptatibus voluptatum!</span><span>Alias blanditiis debitis dolor, dolorem doloribus eaque, esse hic id inventore itaque iure, labore magnam nemo neque non odio officia quae rem sed sunt temporibus tenetur vel? Fugit, ullam, unde.</span><span>Accusantium consequatur delectus dignissimos dolorem eligendi ipsa magnam nam nesciunt optio quia quo, quod ratione reiciendis rerum vitae. At ea exercitationem in similique? Beatae dicta expedita quae quos rem velit.</span><span>Aliquid architecto beatae harum itaque quis tempore velit! Accusamus ad corporis cum cupiditate, deserunt enim est maiores minus molestiae mollitia nobis perspiciatis porro quam repellendus repudiandae sapiente sit temporibus voluptates.</span><span>Accusamus ad adipisci beatae distinctio eos facere porro quasi quis similique, ut! Dolor dolorem excepturi laudantium molestias necessitatibus quaerat reprehenderit rerum saepe totam unde! Est minima nulla reiciendis sapiente sunt?</span><span>Aliquam consectetur doloremque dolorum eius exercitationem expedita fuga fugiat id illo iusto labore maxime minus, modi nemo perferendis placeat quam quasi quis saepe similique sunt tenetur voluptas voluptates voluptatibus voluptatum!</span><span>Architecto blanditiis cum dolore harum hic illo impedit ipsa magni, omnis porro similique tempora. Adipisci animi aut, autem corporis ea est molestiae saepe ut veniam. Beatae ea optio sapiente totam.</span><span>Accusantium, alias consequatur ducimus facere magni nam? Architecto distinctio eius enim error est illum impedit ipsa, iure natus necessitatibus pariatur, perferendis quas quibusdam ratione repellendus sapiente tempora ullam, unde veritatis?</span><span>Ad amet ea ex fugiat, labore laborum nam! Aliquid amet autem cum delectus earum eveniet molestiae nisi, non obcaecati odit perferendis quaerat quam repudiandae sint sit tempora unde velit voluptatem.</span><span>Dolores eveniet facilis itaque neque perspiciatis quis! Debitis eius hic ipsa recusandae? Alias autem cum esse, eveniet fugiat incidunt inventore ipsam minus molestiae, nostrum quas saepe sequi sint sunt veniam.</span>
     </p>
 
     <div class="card" style="width: 18rem;">
-        <img src="https://placehold.co/450x300?text=Hello+World" class="card-img-top" alt="...">
+        <img src="{% get_media_prefix %}image.jpg" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
