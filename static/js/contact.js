@@ -30,16 +30,16 @@ $(document).ready(function(){
                 },
                 message: {
                     required: true,
-                    minlength: 20
+                    minlength: 10
                 }
             },
             messages: {
                 name: {
-                    required: "come on, you have a name, don't you?",
+                    required: "Please enter a name.",
                     minlength: "your name must consist of at least 2 characters"
                 },
                 subject: {
-                    required: "come on, you have a subject, don't you?",
+                    required: "Enter a subject.",
                     minlength: "your subject must consist of at least 4 characters"
                 },
                 number: {
@@ -47,19 +47,21 @@ $(document).ready(function(){
                     minlength: "your Number must consist of at least 5 characters"
                 },
                 email: {
-                    required: "no email, no message"
+                    required: "Enter a mail address"
                 },
                 message: {
-                    required: "um...yea, you have to write something to send this form.",
-                    minlength: "thats all? really?"
+                    required: "You have to write something to send this form.",
+                    minlength: "your message must consist of at least 10 characters"
                 }
             },
             submitHandler: function(form) {
                 $(form).ajaxSubmit({
                     type:"POST",
                     data: $(form).serialize(),
-                    url:"contact_process.php",
-                    success: function() {
+                    url:"/contact_form",
+                    success: function(response) {
+                        console.log(response);
+                        if (response.success) {
                         $('#contactForm :input').attr('disabled', 'disabled');
                         $('#contactForm').fadeTo( "slow", 1, function() {
                             $(this).find(':input').attr('disabled', 'disabled');
@@ -68,6 +70,15 @@ $(document).ready(function(){
                             $('.modal').modal('hide');
 		                	$('#success').modal('show');
                         })
+                        } else {
+                            $('#contactForm').fadeTo( "slow", 1, function() {
+                            $('#error').fadeIn()
+                            $('.modal').modal('hide');
+		                	$('#error').modal('show');
+                        })
+
+                        }
+
                     },
                     error: function() {
                         $('#contactForm').fadeTo( "slow", 1, function() {
