@@ -18,7 +18,7 @@ class GeneralSetting(models.Model):
     )
     parameter = models.CharField(
         default='',
-        max_length=254,
+        max_length=512,
         blank=True,
         verbose_name='Parameter',
         help_text='',
