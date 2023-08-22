@@ -101,3 +101,10 @@ class Skill(AbstractModel):
         verbose_name='Percentage',
         validators=[MinValueValidator(0), MaxValueValidator(100)],
     )
+    def __str__(self):
+        return f'Skill Setting: {self.name}'
+
+    class Meta:
+        verbose_name = 'Skill'
+        verbose_name_plural = 'Skills'
+        ordering = ('order',)
