@@ -7,7 +7,7 @@ RUN apt-get install python3-dev build-essential -y
 
 #set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
-ENV VIRTUAL_ENV =/opt/venv
+ENV VIRTUAL_ENV=/opt/venv
 
 #pip requirements
 RUN pip install --upgrade pip
