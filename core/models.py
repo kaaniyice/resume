@@ -17,6 +17,7 @@ class AbstractModel(models.Model):
         verbose_name='Created Date',
         help_text='',
     )
+
     class Meta:
         abstract = True
 
@@ -84,6 +85,7 @@ class ImageSetting(AbstractModel):
         verbose_name_plural = 'Image Settings'
         ordering = ('name',)
 
+
 class Skill(AbstractModel):
     order = models.IntegerField(
         default=0,
@@ -101,6 +103,7 @@ class Skill(AbstractModel):
         verbose_name='Percentage',
         validators=[MinValueValidator(0), MaxValueValidator(100)],
     )
+
     def __str__(self):
         return f'Skill Setting: {self.name}'
 
@@ -108,6 +111,7 @@ class Skill(AbstractModel):
         verbose_name = 'Skill'
         verbose_name_plural = 'Skills'
         ordering = ('order',)
+
 
 class Experience(AbstractModel):
     company_name = models.CharField(
@@ -135,8 +139,9 @@ class Experience(AbstractModel):
         default=None,
         null=True,
         blank=True,
-        verbose_name = 'End Date',
+        verbose_name='End Date',
     )
+
     def __str__(self):
         return f'Experience Setting: {self.company_name}'
 
@@ -172,8 +177,9 @@ class Education(AbstractModel):
         default=None,
         null=True,
         blank=True,
-        verbose_name = 'End Date',
+        verbose_name='End Date',
     )
+
     def __str__(self):
         return f'Education Setting: {self.school_name}'
 
@@ -181,6 +187,7 @@ class Education(AbstractModel):
         verbose_name = 'Education'
         verbose_name_plural = 'Educations'
         ordering = ('-start_date',)
+
 
 class SocialMedia(AbstractModel):
     order = models.IntegerField(
@@ -199,10 +206,45 @@ class SocialMedia(AbstractModel):
         blank=True,
         verbose_name='Icon',
     )
+
     def __str__(self):
         return f'Social Media: {self.link}'
 
     class Meta:
         verbose_name = 'Social Media'
         verbose_name_plural = 'Social Media'
+        ordering = ('order',)
+
+class Document(AbstractModel):
+    order = models.IntegerField(
+        default=0,
+        verbose_name='Order',
+    )
+    slug = models.SlugField(
+        default='',
+        max_length=254,
+        blank=True,
+        verbose_name='Slug',
+        help_text='',
+    )
+    button_text = models.CharField(
+        default='',
+        max_length=254,
+        blank=True,
+        verbose_name='Button Text',
+        help_text='',
+    )
+    file = models.FileField(
+        default='',
+        verbose_name='File',
+        help_text='',
+        blank=True,
+        upload_to='documents/',
+    )
+    def __str__(self):
+        return f'Document: {self.slug}'
+
+    class Meta:
+        verbose_name = 'Document'
+        verbose_name_plural = 'Documents'
         ordering = ('order',)
