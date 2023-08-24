@@ -35,7 +35,7 @@ $(document).ready(function(){
             },
             messages: {
                 name: {
-                    required: "Please enter a name.",
+                    required: "Enter a name.",
                     minlength: "your name must consist of at least 2 characters"
                 },
                 subject: {

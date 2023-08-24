@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from core.models import GeneralSetting, ImageSetting, Skill, Experience, Education, SocialMedia, Document
-
+from contact.forms import ContactForm
 # Create your views here.
 def layout(request):
     site_title = GeneralSetting.objects.get(name='site_title').parameter
@@ -47,10 +47,13 @@ def index(request):
     #Educations
     educations = Education.objects.all()
 
+    contact_form = ContactForm()
+
     context = {
         'skills': skills,
         'experiences': experiences,
         'educations': educations,
+        'contact_form': contact_form,
     }
     return render(request, 'index.html',context=context)
 
