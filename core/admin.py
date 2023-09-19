@@ -60,3 +60,13 @@ class DocumentAdmin(admin.ModelAdmin):
     list_editable = ['order', 'slug', 'button_text', 'file']
     class Meta:
         model = Document
+
+@admin.register(RedirectSlug)
+class RedirectSlugAdmin(admin.ModelAdmin):
+    list_display = ['id', 'slug', 'new_url', 'updated_date', 'created_date', ]
+    search_fields = ['slug', 'new_url', ]
+    list_editable = ['slug', 'new_url', ]
+    list_filter = []
+
+    class Meta:
+        model = RedirectSlug
