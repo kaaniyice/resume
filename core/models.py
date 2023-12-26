@@ -215,6 +215,7 @@ class SocialMedia(AbstractModel):
         verbose_name_plural = 'Social Media'
         ordering = ('order',)
 
+
 class Document(AbstractModel):
     order = models.IntegerField(
         default=0,
@@ -241,6 +242,7 @@ class Document(AbstractModel):
         blank=True,
         upload_to='documents/',
     )
+
     def __str__(self):
         return f'Document: {self.slug}'
 
@@ -248,6 +250,7 @@ class Document(AbstractModel):
         verbose_name = 'Document'
         verbose_name_plural = 'Documents'
         ordering = ('order',)
+
 
 class RedirectSlug(AbstractModel):
     slug = models.SlugField(

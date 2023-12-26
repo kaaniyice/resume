@@ -32,7 +32,7 @@ DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = env('ALLOWED_HOSTS', cast=list)
 
-CSFR_TRUSTED_ORIGINS = env('CSFR_TRUSTED_ORIGINS', cast=list)
+CSRF_TRUSTED_ORIGINS = env('CSRF_TRUSTED_ORIGINS', cast=list)
 
 
 # Application definition

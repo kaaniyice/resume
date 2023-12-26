@@ -13,6 +13,7 @@ def get_general_setting(parameter):
         obj = ''
     return obj
 
+
 def get_image_setting(parameter):
     try:
         obj = ImageSetting.objects.get(name=parameter).file
